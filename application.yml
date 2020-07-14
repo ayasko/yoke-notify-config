@@ -1,11 +1,9 @@
 spring:
-  profiles:
-    active: dev
-
   data:
     mongodb:
-      host: 127.0.0.1
+      host: localhost
       port: 27017
+      authentication-database: admin
       username: root
       password: '{cipher}1747e10d9edbd134e86c135afd49248213930ec18dbafe8a44147e2745d74ce0'
       database: yoke
