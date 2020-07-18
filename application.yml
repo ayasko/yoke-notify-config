@@ -8,5 +8,41 @@ spring:
       password: '{cipher}1747e10d9edbd134e86c135afd49248213930ec18dbafe8a44147e2745d74ce0'
       database: yoke
 
+  cloud:
+    stream:
+      bindings:
+        createEvent:
+          group: yoke-notify
+          destination: yoke-create-event
+        deleteEvent:
+          group: yoke-notify
+          destination: yoke-delete-event
+        addEventAttender:
+          group: yoke-notify
+          destination: yoke-add-event-attender
+        deleteEventAttender:
+          group: yoke-notify
+          destination: yoke-delete-event-attender
+
+      kafka:
+        binder:
+          brokers: localhost:9092
+        bindings:
+          createEvent:
+            consumer:
+              maxAttempts: 3
+              enableDlq: true
+          deleteEvent:
+            consumer:
+              maxAttempts: 3
+              enableDlq: true
+          addEventAttender:
+            consumer:
+              maxAttempts: 3
+              enableDlq: true
+          deleteEventAttender:
+            consumer:
+              maxAttempts: 3
+              enableDlq: true
 server:
   port: 8582
