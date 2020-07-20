@@ -8,3 +8,7 @@ spring:
       kafka:
         binder:
           brokers: yoke-kafka:9092
+          
+logback:
+  destination:
+    url: yoke-logstash

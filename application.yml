@@ -46,3 +46,7 @@ spring:
               enableDlq: true
 server:
   port: 8582
+  
+logback:
+  destination:
+    url: localhost
