@@ -44,6 +44,10 @@ spring:
             consumer:
               maxAttempts: 3
               enableDlq: true
+
+  zipkin:
+    baseUrl: http://localhost:9411
+
 server:
   port: 8582
   

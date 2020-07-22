@@ -8,7 +8,10 @@ spring:
       kafka:
         binder:
           brokers: yoke-kafka:9092
-          
+         
+  zipkin:
+    baseUrl: http://yoke-zipkin:9411
+         
 logback:
   destination:
     url: yoke-logstash
